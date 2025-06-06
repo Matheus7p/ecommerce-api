@@ -9,8 +9,7 @@ export default tseslint.config(
   },
   
   eslint.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
-
+  ...tseslint.configs.strict,
   {
     languageOptions: {
       globals: {
@@ -34,14 +33,9 @@ export default tseslint.config(
 
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-floating-promises': 'error',
-      '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-extraneous-class": "off",
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-      '@typescript-eslint/explicit-member-accessibility': ['error', {
-          accessibility: 'explicit',
-          overrides: {
-              constructors: 'no-public'
-          }
-      }],
       '@typescript-eslint/typedef': ['error', {
           memberVariableDeclaration: true,
           propertyDeclaration: true,

@@ -1,0 +1,22 @@
+version: '3.8'
+name: ecommerce
+
+services:
+
+  postgres:
+    container_name: postgress
+    image: postgres
+    hostname: localhost
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: ecommerce
+    volumes:
+      - postgres_data:/var/lib/postgresql/data 
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local 
